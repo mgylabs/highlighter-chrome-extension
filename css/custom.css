@@ -1,0 +1,50 @@
+body {
+  min-width: 250px;
+  border-radius: 5px;
+}
+
+.toggle {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.login {
+  margin-left: 15px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.login-form {
+  line-height: 2;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-checkbox {
+  margin-bottom: 7px;
+}
+
+.form-right {
+  float: right;
+}
+
+.auth-form-header {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.form-group-header {
+  margin-top: 7px;
+}
+
+.label-link {
+  margin-bottom: 10px;
+}
+
+.flash {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
