@@ -48,3 +48,12 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.flex-box {
+  display: flex;
+  align-items: center;
+}
+
+.outer-box {
+  margin: 10px;
+}

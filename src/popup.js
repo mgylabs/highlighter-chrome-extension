@@ -1,12 +1,3 @@
-chrome.storage.local.get(["login"], function (items) {
-    if (items.login) {
-        init_toggle_div();
-    } else {
-        window.location.href = "login.html";
-        console.log("show login");
-    }
-});
-
 function init_toggle_div() {
     var checkbox = document.getElementById("highlight-feature");
 
@@ -36,13 +27,15 @@ function init_toggle_div() {
     });
 
     $("#signout").click(function () {
-        chrome.storage.local.remove(
-            ["accessToken", "refreshToken", "login"],
-            function () {
-                $("#loginDiv").show();
-                $("#toggleDiv").hide();
-                window.location.href = "login.html";
+        chrome.runtime.sendMessage(
+            { action: "auth.signout" },
+            function (response) {
+                if (response.result) {
+                    window.location.href = "login.html";
+                }
             }
         );
     });
 }
+
+init_toggle_div();

@@ -1,3 +1,7 @@
+if (location.search.substring(1).split("&").includes("wrong=true")) {
+    $("#incorrect").show();
+} 
+
 document.getElementById("loginForm").onsubmit = function (evt) {
     evt.preventDefault();
     let form = `username=${$("#username").val()}&password=${$(
@@ -10,6 +14,7 @@ document.getElementById("loginForm").onsubmit = function (evt) {
     username.disabled = true;
     password.disabled = true;
     button.disabled = true;
+    button.textContent = "Signing in...";
 
     chrome.runtime.sendMessage(
         { action: "auth.token", formData: form },
@@ -20,8 +25,11 @@ document.getElementById("loginForm").onsubmit = function (evt) {
                 username.disabled = false;
                 password.disabled = false;
                 button.disabled = false;
+                button.textContent = "Sign in";
                 $("#incorrect").show();
             }
         }
     );
+
+    window.location.href = "signing.html";
 };
