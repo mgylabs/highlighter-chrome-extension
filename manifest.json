@@ -4,7 +4,6 @@
     "version": "1.0",
     "permissions": [
         "tabs",
-        "declarativeContent",
         "storage",
         "https://mgylabs.herokuapp.com/*"
     ],

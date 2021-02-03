@@ -160,8 +160,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                 } else if (status == 404) {
                     sendResponse({
                         vsections: null,
-                        message:
-                            "Highlighter is not yet available for this video.",
+                        message: response.notice,
                     });
                 }
             }
